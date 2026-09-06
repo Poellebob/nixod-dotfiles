@@ -4,10 +4,28 @@ let
   framework13 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAoOyIvsIUwznoj71ZA9lFTixJis1s3ceTjF520uoWU/ viggokh@framework13";
 in
 {
-  "cloudflared-token.age".publicKeys = [ goonbox homeserver ];
-  "playit-secret.age".publicKeys = [ goonbox homeserver ];
-  "windrose-env.age".publicKeys = [ goonbox homeserver ];
-  "searxng.age".publicKeys = [ goonbox framework13 ];
-  "cemu-keys.age".publicKeys = [ goonbox framework13 ];
+  "cloudflared-token.age".publicKeys = [
+    goonbox
+    homeserver
+    framework13
+  ];
+  "playit-secret.age".publicKeys = [
+    goonbox
+    homeserver
+    framework13
+  ];
+  "windrose-env.age".publicKeys = [
+    goonbox
+    homeserver
+    framework13
+  ];
+  "searxng.age".publicKeys = [
+    goonbox
+    framework13
+  ];
+  "cemu-keys.age".publicKeys = [
+    goonbox
+    framework13
+  ];
   "goonbox-playit.age".publicKeys = [ goonbox ];
 }

@@ -66,7 +66,7 @@ in
           y = 0;
         };
         scale = 1.0;
-        workspace = "discord";
+        workspace = 10;
       };
     };
   };

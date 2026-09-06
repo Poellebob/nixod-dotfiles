@@ -95,11 +95,9 @@
           shell.enable = true;
           theming.enable = true;
 
-          minimaConfig = {
-            darkTheme = true;
-            wallpaper.engineEnabled = true;
-            panel.alwaysVisible = true;
-          };
+          darkTheme = true;
+          wallpaper.engineEnabled = true;
+          panel.alwaysVisible = true;
 
           autostart = [
             "${pkgs.spotify}/bin/spotify --disable-gpu"
@@ -138,14 +136,6 @@
               ];
               rule.app_id = [ "obs-studio" ];
             };
-            TV = {
-              keybind = [
-                "Main"
-                "t"
-              ];
-              rule.app_id = [ "stremio" ];
-              rule.class = [ "Stremio" ];
-            };
           };
 
           vim = {
@@ -154,39 +144,6 @@
             lsp.servers = {
               bashls.enable = true;
             };
-
-            keybinds = [
-              {
-                mode = "n";
-                key = "-p";
-                action = "<NOP>";
-                desc = "PlatformIO";
-              }
-              {
-                mode = "n";
-                key = "-pd";
-                action = "<cmd>!pio run -t compiledb<CR>";
-                desc = "Make pio compiledb";
-              }
-              {
-                mode = "n";
-                key = "-pu";
-                action = "<cmd>!pio run -t upload<CR>";
-                desc = "Upload pio project";
-              }
-              {
-                mode = "n";
-                key = "-pm";
-                action = "<cmd>!pio run<CR>";
-                desc = "Make pio project";
-              }
-              {
-                mode = "n";
-                key = "-pc";
-                action = "<cmd>!pio run -t clean<CR>";
-                desc = "Clean pio project";
-              }
-            ];
 
             autocmd = [
               {

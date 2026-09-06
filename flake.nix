@@ -77,6 +77,7 @@
       agenix,
       minima,
       nixos-wsl,
+      nix-minecraft,
       ...
     }@inputs:
     {
@@ -122,6 +123,10 @@
         modules = [
           agenix.nixosModules.default
           playit.nixosModules.default
+          nix-minecraft.nixosModules.minecraft-servers
+          {
+            nixpkgs.overlays = [ nix-minecraft.overlays.default ];
+          }
           ./hosts/homeserver/configuration.nix
         ];
         specialArgs = { inherit inputs; };
